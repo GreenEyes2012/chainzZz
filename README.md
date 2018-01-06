@@ -44,7 +44,7 @@ This section presumes that you have root access to the server mentioned above an
 **Step 1.** Install git and clone the chainzZz repository
 
     sudo apt-get install git
-    sudo git clone https://github.com/username/chainzZz.git
+    sudo git clone https://github.com/unibitlabs/chainzZz.git
 
 **Step 2.** Harden the base operating system (Ubuntu 16.04.3 x64). This will also create a new user called [yobiuser] with the password entered by you below.
 
