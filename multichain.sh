@@ -12,7 +12,7 @@
 chainname=$1
 rpcuser=$2
 rpcpassword=$3
-assetName='yobicoin'
+assetName='yourcoin'
 multichainVersion='1.0'
 protocol=10009
 networkport=61172
@@ -21,7 +21,7 @@ explorerport=2750
 adminNodeName=$chainname'_Admin'
 explorerDisplayName=$chainname
 phpinipath='/etc/php/7.0/apache2/php.ini'
-username='yobiuser'
+username='youruser'
 
 echo '----------------------------------------'
 echo -e 'INSTALLING PREREQUISITES.....'
