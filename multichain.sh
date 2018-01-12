@@ -14,7 +14,7 @@ rpcuser=$2
 rpcpassword=$3
 assetName='yourcoin'
 multichainVersion='2.0'
-protocol=10009
+protocol=20001
 networkport=61172
 rpcport=15590
 explorerport=2750
@@ -79,8 +79,8 @@ echo -e 'INSTALLING & CONFIGURING MULTICHAIN.....'
 echo '----------------------------------------'
 
 sudo bash -c 'chmod -R 777 /var/www/html'
-wget --no-verbose http://www.multichain.com/download/multichain-latest.tar.gz
-sudo bash -c 'tar xvf multichain-latest.tar.gz'
+wget --no-verbose https://www.multichain.com/download/multichain-2.0-alpha-1.tar.gz
+sudo bash -c 'tar xvf multichain-2.0-alpha-1.tar.gz'
 sudo bash -c 'cp multichain-'$multichainVersion'*/multichain* /usr/local/bin/'
 
 su -l $username -c  'multichain-util create '$chainname
