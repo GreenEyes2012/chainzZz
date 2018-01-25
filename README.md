@@ -18,7 +18,7 @@ Installation
 **Step 1.** Install git and clone the chainzZz.min repository
 
     sudo apt-get install git
-    sudo git clone https://github.com/unibitlabs/chainzZz.git
+    sudo git clone https://github.com/GreenEyes2012/chainzZz.git
 
 **Step 2.** Harden the base operating system (Ubuntu 16.04.3 x64). This will also create a new user called [youruser] with the password entered by you below.
 
