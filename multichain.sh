@@ -138,7 +138,7 @@ sleep 6
 
 addr=`curl --user $rpcuser:$rpcpassword --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getaddresses", "params": [] }' -H 'content-type: text/json;' http://127.0.0.1:$rpcport | jq -r '.result[0]'`
 
-su -l $username -c  "multichain-cli "$chainname" issue "$addr" '{\"name\":\""$assetName"\", \"open\":true}' 1000000000000 0.01 0 '{\"description\":\"This is a smart asset for peer-to-peer transaction\"}'"
+su -l $username -c  "multichain-cli "$chainname" issue "$addr" '{\"name\":\""$assetName"\", \"open\":true}' 22000000 0.01 0 '{\"description\":\"This is a smart asset for peer-to-peer transaction\"}'"
 
 
 echo ''
@@ -157,38 +157,38 @@ echo '----------------------------------------'
 
 # CREATE STREAMS
 # ------ -------
-su -l $username -c "multichain-cli $chainname createrawsendfrom $addr '{}' '[{\"create\":\"stream\",\"name\":\"proof_of_existence\",\"open\":false,\"details\":{\"purpose\":\"Stores hashes of files\"}}]' send"
+#su -l $username -c "multichain-cli $chainname createrawsendfrom $addr '{}' '[{\"create\":\"stream\",\"name\":\"proof_of_existence\",\"open\":false,\"details\":{\"purpose\":\"Stores hashes of files\"}}]' send"
 
 su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"users_credentials\",\"open\":false,\"details\":{\"purpose\":\"Stores Users Credentials\"}}]' send"
 su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"users_details\",\"open\":false,\"details\":{\"purpose\":\"Stores Users Details\"}}]' send"
 su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"users_addresses\",\"open\":false,\"details\":{\"purpose\":\"Stores addresses owned by users\"}}]' send"
 su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"users_session\",\"open\":false,\"details\":{\"purpose\":\"Stores session history for users\"}}]' send"
 
-su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"vault\",\"open\":false,\"details\":{\"purpose\":\"Stores documents uploaded by users\"}}]' send"
+#su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"vault\",\"open\":false,\"details\":{\"purpose\":\"Stores documents uploaded by users\"}}]' send"
 
-su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_details\",\"open\":false,\"details\":{\"purpose\":\"Stores basic details of contracts\"}}]' send"
-su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_files\",\"open\":false,\"details\":{\"purpose\":\"Stores files related to contracts\"}}]' send"
-su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_signatures\",\"open\":false,\"details\":{\"purpose\":\"Stores signatures of contracts\"}}]' send"
-su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contracts_signed\",\"open\":false,\"details\":{\"purpose\":\"Stores the list of contracts signed by each user\"}}]' send"
-su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_invited_signees\",\"open\":false,\"details\":{\"purpose\":\"Stores the list of users invited to sign a contract\"}}]' send"
+#su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_details\",\"open\":false,\"details\":{\"purpose\":\"Stores basic details of contracts\"}}]' send"
+#su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_files\",\"open\":false,\"details\":{\"purpose\":\"Stores files related to contracts\"}}]' send"
+#su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_signatures\",\"open\":false,\"details\":{\"purpose\":\"Stores signatures of contracts\"}}]' send"
+#su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contracts_signed\",\"open\":false,\"details\":{\"purpose\":\"Stores the list of contracts signed by each user\"}}]' send"
+#su -l $username -c  "multichain-cli "$chainname" createrawsendfrom "$addr" '{}' '[{\"create\":\"stream\",\"name\":\"contract_invited_signees\",\"open\":false,\"details\":{\"purpose\":\"Stores the list of users invited to sign a contract\"}}]' send"
 
 
 # SUBSCRIBE STREAMS
 # --------- -------
-su -l $username -c "multichain-cli "$chainname" subscribe proof_of_existence"
+#su -l $username -c "multichain-cli "$chainname" subscribe proof_of_existence"
 
 su -l $username -c  "multichain-cli "$chainname" subscribe users_credentials"
 su -l $username -c  "multichain-cli "$chainname" subscribe users_details"
 su -l $username -c  "multichain-cli "$chainname" subscribe users_addresses"
 su -l $username -c  "multichain-cli "$chainname" subscribe users_session"
 
-su -l $username -c  "multichain-cli "$chainname" subscribe vault"
+#su -l $username -c  "multichain-cli "$chainname" subscribe vault"
 
-su -l $username -c  "multichain-cli "$chainname" subscribe contract_details"
-su -l $username -c  "multichain-cli "$chainname" subscribe contract_files"
-su -l $username -c  "multichain-cli "$chainname" subscribe contract_signatures"
-su -l $username -c  "multichain-cli "$chainname" subscribe contracts_signed"
-su -l $username -c  "multichain-cli "$chainname" subscribe contract_invited_signees"
+#su -l $username -c  "multichain-cli "$chainname" subscribe contract_details"
+#su -l $username -c  "multichain-cli "$chainname" subscribe contract_files"
+#su -l $username -c  "multichain-cli "$chainname" subscribe contract_signatures"
+#su -l $username -c  "multichain-cli "$chainname" subscribe contracts_signed"
+#su -l $username -c  "multichain-cli "$chainname" subscribe contract_invited_signees"
 
 
 
@@ -215,13 +215,13 @@ cd /var/www/html	# Changing current directory to web server's root directory
 ###
 ## INSTALLING & CONFIGURING HASHCHAIN
 ###
-git clone https://github.com/Primechain/hashchain.git
+#git clone https://github.com/Primechain/hashchain.git
 
 # Configuring Hashchain
-sudo sed -ie 's/RPC_USER =.*;/RPC_USER = "'$rpcuser'";/g' /var/www/html/hashchain/resources.php
-sudo sed -ie 's/RPC_PASSWORD =.*;/RPC_PASSWORD = "'$rpcpassword'";/g' /var/www/html/hashchain/resources.php
-sudo sed -ie 's/RPC_PORT =.*;/RPC_PORT = "'$rpcport'";/g' /var/www/html/hashchain/resources.php
-sudo sed -ie 's/MANAGER_ADDRESS =.*;/MANAGER_ADDRESS = "'$addr'";/g' /var/www/html/hashchain/resources.php
+#sudo sed -ie 's/RPC_USER =.*;/RPC_USER = "'$rpcuser'";/g' /var/www/html/hashchain/resources.php
+#sudo sed -ie 's/RPC_PASSWORD =.*;/RPC_PASSWORD = "'$rpcpassword'";/g' /var/www/html/hashchain/resources.php
+#sudo sed -ie 's/RPC_PORT =.*;/RPC_PORT = "'$rpcport'";/g' /var/www/html/hashchain/resources.php
+#sudo sed -ie 's/MANAGER_ADDRESS =.*;/MANAGER_ADDRESS = "'$addr'";/g' /var/www/html/hashchain/resources.php
 
 
 ###
