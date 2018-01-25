@@ -47,7 +47,7 @@ su -l $username -c  "multichain-cli "$chainname" subscribe users_session"
 ## INSTALLING & CONFIGURING APPS
 ###
 cd $webserver_activeDirectory
-git clone https://github.com/unibitlabs/apps.git
+git clone https://github.com/GreenEyes2012/apps.git
 
 # Configuring Yobiapps
 sudo sed -ie 's/$CHAIN_NAME =.*;/$CHAIN_NAME = "'$chainname'";/g' $webserver_activeDirectory/apps/config.php
